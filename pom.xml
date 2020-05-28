@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>jie.dian.wan</groupId>
+  <artifactId>spring-practice</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+
+  <name>${project.artifactId}</name>
+  <packaging>pom</packaging>
+
+  <properties>
+    <mybatis-plus.version>3.1.0</mybatis-plus.version>
+    <mysql.version>5.1.45</mysql.version>
+    <!-- 通用 -->
+    <java.version>1.8</java.version>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <!-- 框架 -->
+    <spring-boot.version>2.1.5.RELEASE</spring-boot.version>
+    <spring-platform.version>Brussels-SR16</spring-platform.version>
+    <tomcat.version>8.5.41</tomcat.version>
+    <alibab.durid>1.1.9</alibab.durid>
+    <!-- 项目 -->
+    <practice.version>0.1.0</practice.version>
+  </properties>
+
+  <modules>
+    <module>practice-common</module>
+    <module>practice-bom</module>
+    <module>practice-business</module>
+    <module>practice-model</module>
+    <module>practice-api</module>
+  </modules>
+  <dependencyManagement>
+
+    <dependencies>
+
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring-boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>io.spring.platform</groupId>
+        <artifactId>platform-bom</artifactId>
+        <version>${spring-platform.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+<!--      <dependency>-->
+<!--        <groupId>jie.dian.wan</groupId>-->
+<!--        <artifactId>practice-common-bom</artifactId>-->
+<!--        <version>${practice.version}</version>-->
+<!--        <type>pom</type>-->
+<!--        <scope>import</scope>-->
+<!--      </dependency>-->
+
+
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <!--配置文件处理器-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-configuration-processor</artifactId>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+
+
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.junit.vintage</groupId>
+          <artifactId>junit-vintage-engine</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+
+
+
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid-spring-boot-starter</artifactId>
+      <version>${alibab.durid}</version>
+    </dependency>
+
+    <!-- mybatis-plus依赖 -->
+
+    <dependency>
+      <groupId>com.baomidou</groupId>
+      <artifactId>mybatis-plus-boot-starter</artifactId>
+      <version>${mybatis-plus.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.baomidou</groupId>
+      <artifactId>mybatis-plus-extension</artifactId>
+      <version>${mybatis-plus.version}</version>
+    </dependency>
+    <!--数据库-->
+    <!-- 连接池依赖+数据库驱动包依赖 -->
+
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+
+
+  </dependencies>
+
+  <build>
+    <finalName>${project.name}</finalName>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>${spring-boot.version}</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>repackage</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <target>${maven.compiler.target}</target>
+          <source>${maven.compiler.source}</source>
+          <encoding>UTF-8</encoding>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

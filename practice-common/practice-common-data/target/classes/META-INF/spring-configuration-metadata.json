@@ -1,0 +1,18 @@
+{
+  "groups": [
+    {
+      "name": "spring.datasource.druid.master",
+      "type": "javax.sql.DataSource",
+      "sourceType": "jie.dian.wan.common.data.config.MasterDataSourceConfig",
+      "sourceMethod": "druidDataSource1()"
+    },
+    {
+      "name": "spring.datasource.druid.slave",
+      "type": "javax.sql.DataSource",
+      "sourceType": "jie.dian.wan.common.data.config.SlaveSourceConfig",
+      "sourceMethod": "druidDataSource1()"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}

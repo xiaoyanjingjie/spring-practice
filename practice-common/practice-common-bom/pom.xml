@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>practice-common</artifactId>
+    <groupId>jie.dian.wan</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>pom</packaging>
+  <description>公共依赖聚合</description>
+  <version>0.1.0</version>
+
+  <artifactId>practice-common-bom</artifactId>
+  <name>${project.artifactId}</name>
+
+  <properties>
+    <practice.version>0.1.0</practice.version>
+  </properties>
+<!--<dependencyManagement>-->
+<!--  <dependencies>-->
+<!--    <dependency>-->
+<!--      <groupId>cn.org.bjca</groupId>-->
+<!--      <artifactId>econtract-common-data</artifactId>-->
+<!--      <version>${practice.version}</version>-->
+<!--    </dependency>-->
+<!--  </dependencies>-->
+
+<!--</dependencyManagement>-->
+</project>
