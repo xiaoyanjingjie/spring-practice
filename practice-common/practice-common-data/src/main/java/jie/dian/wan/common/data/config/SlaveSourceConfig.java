@@ -20,7 +20,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 @Configuration
 @MapperScan(basePackages = SlaveSourceConfig.PACKAGE,sqlSessionFactoryRef = "slaveSqlSessionFactory")
 public class SlaveSourceConfig {
-  static final String PACKAGE = "jie.dian.wan.slavedb.*.mapper";
+  static final String PACKAGE = "jie.dian.wan.**.mapper.slave";
   static final String MAPPER_LOCATION = "classpath*:mapper/slavedb/*.xml";
 
   @Bean("db2")

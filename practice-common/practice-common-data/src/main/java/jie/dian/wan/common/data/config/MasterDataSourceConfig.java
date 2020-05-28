@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 /**
+ * 参考地址 https://blog.csdn.net/tuesdayma/article/details/81081666
  * 主数据源配置
  *
  * @author wan dianjie
@@ -21,7 +22,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 @Configuration
 @MapperScan(basePackages = MasterDataSourceConfig.PACKAGE,sqlSessionFactoryRef = "masterSqlSessionFactory")
 public class MasterDataSourceConfig {
-  static final String PACKAGE = "jie.dian.wan.masterdb.*.mapper";
+  static final String PACKAGE = "jie.dian.wan.**.mapper.master";
   static final String MAPPER_LOCATION = "classpath*:mapper/masterdb/*.xml";
 
 

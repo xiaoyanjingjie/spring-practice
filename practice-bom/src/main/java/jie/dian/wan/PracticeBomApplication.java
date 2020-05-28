@@ -14,7 +14,8 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
  * @date 2019-03-04 20:43
  */
 //@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class,DataSourceTransactionManagerAutoConfiguration.class, MybatisPlusAutoConfiguration.class})
-@SpringBootApplication(scanBasePackages = {"jie.dian.wan"},exclude = {DataSourceAutoConfiguration.class,DataSourceTransactionManagerAutoConfiguration.class, MybatisPlusAutoConfiguration.class})
+//@SpringBootApplication(scanBasePackages = {"jie.dian.wan"},exclude = {DataSourceAutoConfiguration.class,DataSourceTransactionManagerAutoConfiguration.class, MybatisPlusAutoConfiguration.class})
+@SpringBootApplication
 public class PracticeBomApplication {
   public static void main(String[] args) {
     SpringApplication.run(PracticeBomApplication.class, args);
