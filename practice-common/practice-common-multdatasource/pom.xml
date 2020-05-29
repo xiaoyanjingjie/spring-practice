@@ -11,40 +11,6 @@
 
   <artifactId>practice-common-multdatasource</artifactId>
   <packaging>jar</packaging>
-  <dependencyManagement>
-
-    <dependencies>
-      <dependency>
-        <groupId>com.alibaba</groupId>
-        <artifactId>druid-spring-boot-starter</artifactId>
-        <version>${alibab.durid}</version>
-      </dependency>
-
-      <!-- mybatis-plus依赖 -->
-
-      <dependency>
-        <groupId>com.baomidou</groupId>
-        <artifactId>mybatis-plus-boot-starter</artifactId>
-        <version>${mybatis-plus.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.baomidou</groupId>
-        <artifactId>mybatis-plus-extension</artifactId>
-        <version>${mybatis-plus.version}</version>
-      </dependency>
-      <!--数据库-->
-      <!-- 连接池依赖+数据库驱动包依赖 -->
-
-      <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>${mysql-conn.verson}</version>
-      </dependency>
-
-
-    </dependencies>
-  </dependencyManagement>
 
   <dependencies>
     <dependency>

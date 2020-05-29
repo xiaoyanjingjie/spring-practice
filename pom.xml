@@ -57,13 +57,13 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-<!--      <dependency>-->
-<!--        <groupId>jie.dian.wan</groupId>-->
-<!--        <artifactId>practice-common-bom</artifactId>-->
-<!--        <version>${practice.version}</version>-->
-<!--        <type>pom</type>-->
-<!--        <scope>import</scope>-->
-<!--      </dependency>-->
+      <dependency>
+        <groupId>jie.dian.wan</groupId>
+        <artifactId>practice-common-bom</artifactId>
+        <version>${practice.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
 
       <!--数据库-->
       <!-- 连接池依赖+数据库驱动包依赖 -->
@@ -73,8 +73,36 @@
         <artifactId>mysql-connector-java</artifactId>
         <version>${mysql-conn.verson}</version>
       </dependency>
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid-spring-boot-starter</artifactId>
+        <version>${alibab.durid}</version>
+      </dependency>
 
+      <!-- mybatis-plus依赖 -->
+
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-boot-starter</artifactId>
+        <version>${mybatis-plus.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-extension</artifactId>
+        <version>${mybatis-plus.version}</version>
+      </dependency>
+      <!--数据库-->
+      <!-- 连接池依赖+数据库驱动包依赖 -->
+
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql-conn.verson}</version>
+      </dependency>
     </dependencies>
+
+
   </dependencyManagement>
 
   <dependencies>
