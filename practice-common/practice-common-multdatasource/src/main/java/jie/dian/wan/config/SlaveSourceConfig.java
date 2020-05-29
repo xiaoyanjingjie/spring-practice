@@ -1,4 +1,4 @@
-package jie.dian.wan.common.data.config;
+package jie.dian.wan.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
@@ -6,6 +6,7 @@ import javax.sql.DataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,6 +18,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
  * @author wan dianjie
  * @date 2020-05-27 17:46
  */
+@ConditionalOnProperty(prefix = "spring.mult.datasource", name = "switch", havingValue = "true")
 @Configuration
 @MapperScan(basePackages = SlaveSourceConfig.PACKAGE,sqlSessionFactoryRef = "slaveSqlSessionFactory")
 public class SlaveSourceConfig {

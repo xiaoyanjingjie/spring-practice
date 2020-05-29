@@ -11,7 +11,16 @@
 
   <artifactId>practice-common-data</artifactId>
   <packaging>jar</packaging>
+  <dependencyManagement>
+    <dependencies>
 
+    </dependencies>
+  </dependencyManagement>
 
-
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+  </dependencies>
 </project>

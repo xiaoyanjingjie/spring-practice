@@ -15,6 +15,7 @@
   <properties>
     <mybatis-plus.version>3.1.0</mybatis-plus.version>
     <mysql.version>5.1.45</mysql.version>
+    <mysql-conn.verson>8.0.16</mysql-conn.verson>
     <!-- 通用 -->
     <java.version>1.8</java.version>
 
@@ -64,6 +65,14 @@
 <!--        <scope>import</scope>-->
 <!--      </dependency>-->
 
+      <!--数据库-->
+      <!-- 连接池依赖+数据库驱动包依赖 -->
+
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql-conn.verson}</version>
+      </dependency>
 
     </dependencies>
   </dependencyManagement>
@@ -95,10 +104,7 @@
       </exclusions>
     </dependency>
 
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-redis</artifactId>
-    </dependency>
+
 
     <dependency>
       <groupId>org.springframework.boot</groupId>

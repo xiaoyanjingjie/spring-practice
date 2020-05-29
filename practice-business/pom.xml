@@ -22,6 +22,11 @@
     <version>1.0-SNAPSHOT</version>
     <scope>compile</scope>
   </dependency>
+  <dependency>
+    <groupId>jie.dian.wan</groupId>
+    <artifactId>practice-common-multdatasource</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </dependency>
 </dependencies>
 
 </project>

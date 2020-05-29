@@ -23,7 +23,7 @@ DEFAULT_JAVA_OPTS=" -server -Xmx${XMX_V}m -Xms${XMS_V}m -Xmn${XMN_V}m -XX:PermSi
 
 #定义变量:
 APP_PATH=${APP_PATH:-`dirname "$BASE_PATH"`}
-CLASS_PATH=${CLASS_PATH:-$APP_PATH/config:$APP_PATH/lib/*}
+CLASS_PATH=${CLASS_PATH:-$APP_PATH/jie.dian.wan.config:$APP_PATH/lib/*}
 APOLLO_ENVIRONMENT=DEV
 JAVA_OPTS=${JAVA_OPTS:-$DEFAULT_JAVA_OPTS}
 DEFAULT_JAR=$(find $APP_PATH/lib/ -name *.jar)
