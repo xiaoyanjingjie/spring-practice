@@ -37,6 +37,7 @@
     <module>practice-business</module>
     <module>practice-model</module>
     <module>practice-api</module>
+    <module>practice-auth</module>
   </modules>
   <dependencyManagement>
 
