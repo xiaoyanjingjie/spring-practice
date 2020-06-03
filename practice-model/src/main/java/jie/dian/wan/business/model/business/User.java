@@ -15,4 +15,5 @@ import lombok.EqualsAndHashCode;
 public class User extends Model<User> {
   private String id;
   private String email;
+  private String mobilePhone;
 }

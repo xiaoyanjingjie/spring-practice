@@ -1,5 +1,7 @@
 package jie.dian.wan.business.controller;
 
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import jie.dian.wan.business.UserContrallerFacade;
 import jie.dian.wan.business.model.business.User;
 import jie.dian.wan.business.service.UserService;
 import lombok.AllArgsConstructor;
@@ -16,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/user")
-public class UserContraller {
+public class UserContraller implements UserContrallerFacade {
 
   private final UserService userService;
 
@@ -28,5 +30,10 @@ public class UserContraller {
   @GetMapping("/getSlavedb")
   public User getSlavedb(){
     return userService.getSlavedb();
+  }
+
+  @Override
+  public User getUserInfoByName(String mobilePhone) {
+    return userService.getOne(Wrappers.<User>lambdaQuery().eq(User::getMobilePhone,mobilePhone));
   }
 }

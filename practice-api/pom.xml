@@ -11,5 +11,11 @@
 
   <artifactId>practice-api</artifactId>
 
-
+<dependencies>
+  <dependency>
+    <groupId>jie.dian.wan</groupId>
+    <artifactId>practice-model</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </dependency>
+</dependencies>
 </project>
