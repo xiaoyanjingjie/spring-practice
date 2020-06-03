@@ -1,6 +1,6 @@
 package jie.dian.wan.business.controller;
 
-import jie.dian.wan.business.model.user.User;
+import jie.dian.wan.business.model.business.User;
 import jie.dian.wan.business.service.UserService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

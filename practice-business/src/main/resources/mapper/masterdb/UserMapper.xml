@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="jie.dian.wan.business.mapper.master.UserMapper">
-  <select id="getMasterdb" resultType="jie.dian.wan.business.model.user.User">
+  <select id="getMasterdb" resultType="jie.dian.wan.business.model.business.User">
     select * from t_s_user limit 1
   </select>
   </mapper>

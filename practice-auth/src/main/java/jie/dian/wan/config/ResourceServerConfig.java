@@ -18,7 +18,13 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
   @Override
   public void configure(HttpSecurity http) throws Exception {
-    http.requestMatchers().antMatchers("/api/**").and().authorizeRequests().antMatchers("/api/**")
+    http
+        .authorizeRequests()
+        .antMatchers("/oauth/confirm_access").permitAll()
+        .antMatchers("/**/*.js").permitAll()
+        .antMatchers("/favicon.ico").permitAll()
+        .and()
+        .requestMatchers().antMatchers("/api/**").and().authorizeRequests().antMatchers("/api/**")
         .authenticated();
   }
 

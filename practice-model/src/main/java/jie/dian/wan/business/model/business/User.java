@@ -1,4 +1,4 @@
-package jie.dian.wan.business.model.user;
+package jie.dian.wan.business.model.business;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;

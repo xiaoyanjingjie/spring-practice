@@ -2,7 +2,7 @@ package jie.dian.wan.business.service.impl;
 
 import jie.dian.wan.business.mapper.master.UserMapper;
 import jie.dian.wan.business.mapper.slave.UserSlaveMapper;
-import jie.dian.wan.business.model.user.User;
+import jie.dian.wan.business.model.business.User;
 import jie.dian.wan.business.service.UserService;
 import jie.dian.wan.common.data.base.EcBaseServiceImpl;
 import lombok.AllArgsConstructor;

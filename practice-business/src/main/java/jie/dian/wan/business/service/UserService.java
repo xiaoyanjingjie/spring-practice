@@ -1,7 +1,7 @@
 package jie.dian.wan.business.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import jie.dian.wan.business.model.user.User;
+import jie.dian.wan.business.model.business.User;
 
 /**
  * 用户信息
