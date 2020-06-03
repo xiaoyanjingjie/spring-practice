@@ -16,7 +16,7 @@
     <mybatis-plus.version>3.1.0</mybatis-plus.version>
     <mysql.version>5.1.45</mysql.version>
     <mysql-conn.verson>8.0.16</mysql-conn.verson>
-    <oauth2-security.version>2.3.3.RELEASE</oauth2-security.version>
+    <oauth2-security.version>2.3.6.RELEASE</oauth2-security.version>
     <hutool.version>5.1.0</hutool.version>
     <!-- 通用 -->
     <java.version>1.8</java.version>
