@@ -17,6 +17,10 @@ import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 
 /**
+ * 密码模式（resource owner password credentials）(为遗留系统设计)(支持refresh token)
+ * 授权码模式（authorization code）(正宗方式)(支持refresh token)
+ * 简化模式（implicit）(为web浏览器应用设计)(不支持refresh token)
+ * 客户端模式（client credentials）(为后台api服务消费者设计)(不支持refresh token)
  * 参考 https://blog.csdn.net/qq_38765404/article/details/88803411
  *
  * https://blog.csdn.net/qq_38765404/article/details/88822281?utm_medium=distribute.pc_relevant.none-task-blog-baidujs-1

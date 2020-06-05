@@ -17,6 +17,7 @@
     <module>practice-common-data</module>
     <module>practice-common-multdatasource</module>
     <module>practice-common-bom</module>
+    <module>practice-common-core</module>
   </modules>
 
 
