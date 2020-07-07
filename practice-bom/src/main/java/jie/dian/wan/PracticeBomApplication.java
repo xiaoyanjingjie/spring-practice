@@ -1,5 +1,7 @@
 package jie.dian.wan;
 
+import com.alibaba.dubbo.config.spring.context.annotation.DubboComponentScan;
+import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -16,6 +18,8 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
 //@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class,DataSourceTransactionManagerAutoConfiguration.class, MybatisPlusAutoConfiguration.class})
 //@SpringBootApplication(scanBasePackages = {"jie.dian.wan"},exclude = {DataSourceAutoConfiguration.class,DataSourceTransactionManagerAutoConfiguration.class, MybatisPlusAutoConfiguration.class})
 @SpringBootApplication
+@EnableDubbo
+@DubboComponentScan
 public class PracticeBomApplication {
   public static void main(String[] args) {
     SpringApplication.run(PracticeBomApplication.class, args);

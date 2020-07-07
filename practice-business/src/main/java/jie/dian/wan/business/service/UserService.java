@@ -1,6 +1,7 @@
 package jie.dian.wan.business.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import java.util.List;
 import jie.dian.wan.business.model.business.User;
 
 /**
@@ -14,5 +15,7 @@ public interface UserService extends IService<User> {
   User getMasterdb();
 
   User getSlavedb();
+
+  List getUserInfo();
 }
 
