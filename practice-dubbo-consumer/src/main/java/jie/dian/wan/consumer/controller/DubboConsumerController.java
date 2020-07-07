@@ -23,4 +23,13 @@ public class DubboConsumerController {
      return dubboUserService.getUserInfo(name);
   }
 
+  //直连方式
+//  @Reference(version = "${demo.service.version}",url = "dubbo://127.0.0.1:20880")
+//  private DubboUserService dubboUserService;
+//
+//  @GetMapping("/getUserName")
+//  public String getUserName(@RequestParam String name){
+//    return dubboUserService.getUserInfo(name);
+//  }
+
 }
