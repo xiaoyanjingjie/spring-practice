@@ -1,13 +1,9 @@
 package jie.dian.wan.business.controller;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import java.util.List;
 import jie.dian.wan.business.UserContrallerFacade;
 import jie.dian.wan.business.model.business.User;
-import jie.dian.wan.business.service.UserDubboService;
 import jie.dian.wan.business.service.UserService;
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,8 +41,5 @@ public class UserContraller implements UserContrallerFacade {
     return userService.getOne(Wrappers.<User>lambdaQuery().eq(User::getMobilePhone,mobilePhone));
   }
 
-  @GetMapping("/getDubbo")
-  public List getDubbo() {
-    return userService.getUserInfo();
-  }
+
 }

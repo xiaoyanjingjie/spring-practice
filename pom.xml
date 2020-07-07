@@ -42,6 +42,8 @@
     <module>practice-model</module>
     <module>practice-api</module>
     <module>practice-auth</module>
+    <module>practice-dubbo-service</module>
+    <module>practice-dubbo-consumer</module>
   </modules>
   <dependencyManagement>
 

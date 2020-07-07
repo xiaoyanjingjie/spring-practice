@@ -1,15 +1,10 @@
 package jie.dian.wan.business.service.impl;
 
-import com.alibaba.dubbo.config.annotation.Reference;
-import java.util.List;
 import jie.dian.wan.business.mapper.master.UserMapper;
 import jie.dian.wan.business.mapper.slave.UserSlaveMapper;
 import jie.dian.wan.business.model.business.User;
-import jie.dian.wan.business.service.UserDubboService;
 import jie.dian.wan.business.service.UserService;
 import jie.dian.wan.common.data.base.EcBaseServiceImpl;
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +15,7 @@ import org.springframework.stereotype.Service;
  * @author meng ran
  * @date 2019-03-07 12:45:46
  */
-@Service
+@Service()
 @Slf4j
 public class UserServiceImpl extends EcBaseServiceImpl<UserMapper, User> implements UserService {
 
@@ -28,9 +23,6 @@ public class UserServiceImpl extends EcBaseServiceImpl<UserMapper, User> impleme
   private  UserMapper userMapper;
   @Autowired
   private  UserSlaveMapper userSlaveMapper;
-
-  @Reference
-  private UserDubboService userDubboService;
 
   @Override
   public User getMasterdb() {
@@ -41,11 +33,5 @@ public class UserServiceImpl extends EcBaseServiceImpl<UserMapper, User> impleme
   public User getSlavedb() {
     return userSlaveMapper.getSlavedb();
   }
-
-  @Override
-  public List getUserInfo() {
-    return userDubboService.getUserInfo();
-  }
-
 
 }

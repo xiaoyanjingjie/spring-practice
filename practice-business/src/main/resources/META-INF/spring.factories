@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+jie.dian.wan.business.PracticeBusinessConfiguration
