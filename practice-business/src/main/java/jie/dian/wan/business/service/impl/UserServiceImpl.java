@@ -1,5 +1,6 @@
 package jie.dian.wan.business.service.impl;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import jie.dian.wan.business.mapper.master.UserMapper;
 import jie.dian.wan.business.mapper.slave.UserSlaveMapper;
 import jie.dian.wan.business.model.business.User;
@@ -24,6 +25,7 @@ public class UserServiceImpl extends EcBaseServiceImpl<UserMapper, User> impleme
   @Autowired
   private  UserSlaveMapper userSlaveMapper;
 
+  @SentinelResource(value = "getMasterdb")
   @Override
   public User getMasterdb() {
     return userMapper.getMasterdb();

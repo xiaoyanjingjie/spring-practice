@@ -44,6 +44,8 @@
     <module>practice-auth</module>
     <module>practice-dubbo-service</module>
     <module>practice-dubbo-consumer</module>
+    <module>sentinel-dashboard</module>
+    <module>sentinel-client</module>
   </modules>
   <dependencyManagement>
 
