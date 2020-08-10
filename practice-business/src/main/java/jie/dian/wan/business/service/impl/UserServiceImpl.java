@@ -7,7 +7,9 @@ import jie.dian.wan.business.model.business.User;
 import jie.dian.wan.business.service.UserService;
 import jie.dian.wan.common.data.base.EcBaseServiceImpl;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,6 +18,7 @@ import org.springframework.stereotype.Service;
  * @author meng ran
  * @date 2019-03-07 12:45:46
  */
+
 @Service()
 @Slf4j
 public class UserServiceImpl extends EcBaseServiceImpl<UserMapper, User> implements UserService {
@@ -36,4 +39,10 @@ public class UserServiceImpl extends EcBaseServiceImpl<UserMapper, User> impleme
     return userSlaveMapper.getSlavedb();
   }
 
+  @Async
+  @Override
+  public String  testAsync() {
+    log.info("trace-id:{}",MDC.get("trace-id"));
+    return "haha";
+  }
 }

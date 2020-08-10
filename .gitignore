@@ -16,8 +16,6 @@ practice-api/src/test/
 practice-api/target/
 practice-auth/src/test/
 practice-auth/target/
-practice-bom/src/test/
-practice-bom/target/generated-sources/
 practice-business/src/test/
 practice-business/target/
 practice-common/practice-common-bom/src/
@@ -61,3 +59,4 @@ sentinel-dashboard/target/classes/resources/package.json
 sentinel-dashboard/target/generated-sources/
 sentinel-dashboard/target/generated-test-sources/
 sentinel-dashboard/target/test-classes/
+practice-bom/target/

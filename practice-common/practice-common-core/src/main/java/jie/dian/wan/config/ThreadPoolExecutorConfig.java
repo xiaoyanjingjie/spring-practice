@@ -32,7 +32,7 @@ public class ThreadPoolExecutorConfig {
 
   @Bean(name = "taskExecutor")
   public ThreadPoolTaskExecutor getThreadPoolTaskExecutor() {
-    ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
+    MdcThreadPoolTaskExecutor threadPoolTaskExecutor = new MdcThreadPoolTaskExecutor();
     //线程池维护线程的最少数量
     threadPoolTaskExecutor.setCorePoolSize(threadPoolCoreSize);
     //允许的空闲时间

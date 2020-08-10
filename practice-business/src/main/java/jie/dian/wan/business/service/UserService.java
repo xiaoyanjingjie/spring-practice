@@ -15,5 +15,6 @@ public interface UserService extends IService<User> {
 
   User getSlavedb();
 
+  String testAsync();
 }
 
