@@ -14,7 +14,7 @@ import org.springframework.cache.annotation.Cacheable;
 @CacheConfig(cacheNames = "user")
 public interface UserService extends IService<User> {
 
-  @Cacheable(key = "2333")
+ // @Cacheable(key = "2333")
   User getMasterdb();
 
   User getSlavedb();

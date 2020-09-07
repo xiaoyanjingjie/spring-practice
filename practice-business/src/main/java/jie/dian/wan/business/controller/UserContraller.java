@@ -1,8 +1,12 @@
 package jie.dian.wan.business.controller;
 
+import cn.hutool.json.JSON;
+import cn.hutool.json.JSONUtil;
+import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import java.util.HashMap;
 import java.util.Map;
+import jie.dian.wan.aoplog.LogControllerFilter;
 import jie.dian.wan.business.UserContrallerFacade;
 import jie.dian.wan.business.model.business.User;
 import jie.dian.wan.business.service.UserService;
@@ -14,6 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -30,10 +35,16 @@ public class UserContraller implements UserContrallerFacade {
   private  UserService userService;
 
 
-
+  @LogControllerFilter
+  @ResponseBody
   @PostMapping("/getMasterdb")
-  public User getMasterdb(@RequestBody User user){
-     return userService.getMasterdb();
+  public String getMasterdb(@RequestBody User user){
+    user = userService.getMasterdb() ;
+
+    if(0==0){
+       throw new RuntimeException();
+    }
+    return user.toString();
   }
 
   @GetMapping("/getSlavedb")
