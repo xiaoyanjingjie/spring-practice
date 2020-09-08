@@ -3,7 +3,10 @@ package jie.dian.wan.aoplog;
 import cn.hutool.json.JSONUtil;
 import java.lang.reflect.Method;
 import java.util.Arrays;
+import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
@@ -46,13 +49,22 @@ public class LogControllerAspect {
       // 执行方法
     HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
     log.info("请求路径:{}",request.getRequestURL());
-    log.info("headers:{}",request.getHeaderNames());
+
       String methodName = point.getSignature().getName();
       List<Object> args = Arrays.asList(point.getArgs());
       System.out.println("调用前连接点方法为：" + methodName + ",参数为：" + args);
       // 保存请求日志
       //saveRequestLog(point);
+    Map<String,String> map = new HashMap<>();
+    Enumeration<String> ss= request.getHeaderNames();
 
+    while (ss.hasMoreElements()){
+     // map.put(ss.)
+      //遍历枚举中存储的每一个元素
+      String name	=(String) ss.nextElement();
+      String value = request.getHeader(name);
+      System.out.println( "headrs:"+name+"="+value);
+     }
   }
 //
   @AfterThrowing(value = "logPointCut()",throwing = "e")
