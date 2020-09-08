@@ -15,11 +15,14 @@ import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * @author wan dianjie
@@ -37,15 +40,19 @@ public class UserContraller implements UserContrallerFacade {
 
   @LogControllerFilter
   @ResponseBody
-  @PostMapping("/getMasterdb")
-  public String getMasterdb(@RequestBody User user){
+  @PostMapping("/getMasterdb/{id}")
+  public String getMasterdb(@RequestParam(required = false) String name,@PathVariable String id, @RequestParam("file") MultipartFile file, User user){
     user = userService.getMasterdb() ;
-
-    if(0==0){
-       throw new RuntimeException();
-    }
     return user.toString();
   }
+
+  @LogControllerFilter
+  @ResponseBody
+  @GetMapping("/testAOP/{id}")
+  public String testAOP(@RequestParam(required = false) String name,@PathVariable String id){
+   return "aaa";
+  }
+
 
   @GetMapping("/getSlavedb")
   public User getSlavedb(){
