@@ -1,5 +1,6 @@
 package jie.dian.wan.business.controller;
 
+import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSON;
 import cn.hutool.json.JSONUtil;
 import com.alibaba.fastjson.JSONObject;
@@ -14,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,6 +45,9 @@ public class UserContraller implements UserContrallerFacade {
   @PostMapping("/getMasterdb/{id}")
   public String getMasterdb(@RequestParam(required = false) String name,@PathVariable String id, @RequestParam("file") MultipartFile file, User user){
     user = userService.getMasterdb() ;
+    if(StrUtil.equals(name,id)){
+      int i  = 1/0;
+    }
     return user.toString();
   }
 

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -53,8 +54,20 @@ public class LogControllerAspect {
       //saveRequestLog(point);
 
   }
+//
+  @AfterThrowing(value = "logPointCut()",throwing = "e")
+  public void afterThrowing (JoinPoint point,Throwable e) {
+    // 执行方法
+    HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+    log.info("请求路径:{}",request.getRequestURL());
+    log.info("headers:{}",request.getHeaderNames());
+    String methodName = point.getSignature().getName();
+    List<Object> args = Arrays.asList(point.getArgs());
+    System.out.println("调用前连接点方法为：" + methodName + ",参数为：" + args);
+    // 保存请求日志
+    //saveRequestLog(point);
 
-
+  }
 
 //  @Around("logPointCut()")
 //  public Object around (ProceedingJoinPoint point) throws Throwable {
@@ -66,7 +79,7 @@ public class LogControllerAspect {
 //      saveRequestLog(point);
 //    } catch (Exception e){
 //      // 保存异常日志
-//      //saveExceptionLog(point,e.getMessage());
+//      saveExceptionLog(point,e.getMessage());
 //    }
 //    return result;
 //  }
