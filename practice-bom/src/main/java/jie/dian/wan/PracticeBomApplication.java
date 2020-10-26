@@ -3,6 +3,7 @@ package jie.dian.wan;
 import com.alibaba.dubbo.config.spring.context.annotation.DubboComponentScan;
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration;
+import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,6 +18,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
  */
 //@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class,DataSourceTransactionManagerAutoConfiguration.class, MybatisPlusAutoConfiguration.class})
 //@SpringBootApplication(scanBasePackages = {"jie.dian.wan"},exclude = {DataSourceAutoConfiguration.class,DataSourceTransactionManagerAutoConfiguration.class, MybatisPlusAutoConfiguration.class})
+@EnableRabbit
 @SpringBootApplication
 @EnableDubbo
 @DubboComponentScan
