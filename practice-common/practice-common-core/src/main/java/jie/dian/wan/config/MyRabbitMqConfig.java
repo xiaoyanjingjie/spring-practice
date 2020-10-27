@@ -52,17 +52,17 @@ public class MyRabbitMqConfig {
   @Autowired
   SpringContextUtil springContextUtil;
 
-//  @Bean
-//  public RabbitAdmin rabbitTemplate(ConnectionFactory connectionFactory) {
-//    return new RabbitAdmin(connectionFactory);
-//  }
-//
-//  @Bean
-//  public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory, MessageConverter messageConverter) {
-//    RabbitTemplate template = new RabbitTemplate(connectionFactory);
-//    template.setMessageConverter(messageConverter);
-//    return template;
-//  }
+  @Bean
+  public RabbitAdmin rabbitAdmin(ConnectionFactory connectionFactory) {
+    return new RabbitAdmin(connectionFactory);
+  }
+
+  @Bean
+  public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory, MessageConverter messageConverter) {
+    RabbitTemplate template = new RabbitTemplate(connectionFactory);
+    template.setMessageConverter(messageConverter);
+    return template;
+  }
   @Bean
   public MessageConverter messageConverter(){
     return new Jackson2JsonMessageConverter();
