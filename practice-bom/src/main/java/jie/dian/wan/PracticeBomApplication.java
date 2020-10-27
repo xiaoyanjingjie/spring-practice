@@ -20,8 +20,8 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
 //@SpringBootApplication(scanBasePackages = {"jie.dian.wan"},exclude = {DataSourceAutoConfiguration.class,DataSourceTransactionManagerAutoConfiguration.class, MybatisPlusAutoConfiguration.class})
 @EnableRabbit
 @SpringBootApplication
-@EnableDubbo
-@DubboComponentScan
+//@EnableDubbo
+//@DubboComponentScan
 public class PracticeBomApplication {
   public static void main(String[] args) {
     SpringApplication.run(PracticeBomApplication.class, args);

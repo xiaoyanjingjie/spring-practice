@@ -34,7 +34,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Slf4j
 @RestController
 @RequestMapping("/user")
-public class UserContraller implements UserContrallerFacade {
+public class UserController implements UserContrallerFacade {
 
   @Autowired
   private  UserService userService;

@@ -60,3 +60,4 @@ sentinel-dashboard/target/generated-sources/
 sentinel-dashboard/target/generated-test-sources/
 sentinel-dashboard/target/test-classes/
 practice-bom/target/
+practice-bom/target/*
